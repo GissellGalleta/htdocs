@@ -1,0 +1,13 @@
+#hero {
+    background-image: url('../assets/fondo-inicio.png'); /* Ruta a tu imagen */
+    background-size: cover; /* La imagen ocupa todo el ancho y alto */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 70vh; /* Altura del Hero Section (70% de la ventana) */
+    display: flex; /* Para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-align: center;
+    color: white; /* Color de texto blanco */
+  }
+  
