@@ -32,3 +32,39 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
+
+#password-error {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#password-status {
+  font-size: 14px;
+  margin-top: 5px;
+  transition: color 0.3s ease; /* Transición para hacer el cambio de color más suave */
+}
+
+
+/* Estilo para los chips (elementos seleccionados) */
+.selected-item {
+  background-color: #198754; /* Verde */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.selected-item button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.selected-item button:hover {
+  color: #d4d4d4; /* Color al pasar el cursor */
+}

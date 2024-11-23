@@ -64,8 +64,18 @@
           </div>
           <div class="mb-3">
             <label for="student-password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="student-password" required>
+            <input type="password" class="form-control" id="student-password" minlength="8" required>
+            <small id="password-status" class="d-block mt-1"></small>
           </div>
+          <div class="mb-3">
+            <label for="student-password-confirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="student-password-confirm" minlength="8" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="show-passwords">
+            <label for="show-passwords" class="form-check-label">Mostrar contraseñas</label>
+          </div>
+          <small id="password-error" class="text-danger d-none">Las contraseñas no coinciden.</small>
           <div class="mb-3">
             <label for="student-name" class="form-label">Nombre Completo</label>
             <input type="text" class="form-control" id="student-name" required>
@@ -85,8 +95,14 @@
           <!-- Formación Académica -->
           <h4>Formación Académica</h4>
           <div class="mb-3">
-            <label for="student-titles" class="form-label">Títulos Obtenidos</label>
-            <input type="text" class="form-control" id="student-titles" placeholder="Ejemplo: Ingeniería en Sistemas">
+            <label for="titles-input" class="form-label">Títulos Obtenidos</label>
+            <div id="titles-container" class="d-flex flex-wrap gap-2 mb-2">
+              <!-- Los títulos agregados aparecerán aquí -->
+            </div>
+            <div class="input-group">
+              <input type="text" id="titles-input" class="form-control" placeholder="Escribe un título y presiona Enter">
+              <button id="add-title-btn" type="button" class="btn btn-outline-primary">+ Añadir título</button>
+            </div>
           </div>
           <div class="mb-3">
             <label for="student-university" class="form-label">Nombre de la Universidad</label>
@@ -104,17 +120,28 @@
           <!-- Habilidades -->
           <h4>Habilidades</h4>
           <div class="mb-3">
-            <label for="student-skills" class="form-label">Tecnologías que Dominas</label>
-            <input type="text" class="form-control" id="student-skills" placeholder="Busca tecnologías..." required>
-            <small class="text-muted">Puedes escribir una tecnología o seleccionarla de las opciones disponibles.</small>
+            <label for="technologies-input" class="form-label">Tecnologías que Dominas</label>
+            <div id="technologies-container" class="d-flex flex-wrap gap-2 mb-2">
+              <!-- Las tecnologías seleccionadas aparecerán aquí -->
+            </div>
+            <div class="input-group">
+              <input type="text" id="technologies-input" class="form-control" placeholder="Escribe una tecnología y presiona Enter">
+              <button id="add-tech-btn" type="button" class="btn btn-outline-primary">+ Añadir tecnología</button>
+            </div>
           </div>
 
           <!-- Idiomas -->
           <h4>Idiomas</h4>
           <div class="mb-3">
-            <label for="student-languages" class="form-label">Idiomas</label>
-            <input type="text" class="form-control" id="student-languages" placeholder="Busca idiomas..." required>
-          </div>
+            <label for="languages-input" class="form-label">Idiomas</label>
+            <div id="languages-container" class="d-flex flex-wrap gap-2 mb-2">
+                <!-- Los idiomas seleccionados aparecerán aquí -->
+              </div>
+              <div class="input-group">
+                <input type="text" id="languages-input" class="form-control" placeholder="Escribe un idioma y presiona Enter">
+                <button id="add-language-btn" type="button" class="btn btn-outline-primary">+ Añadir idioma</button>
+              </div>
+            </div>
 
           <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
         </form>
