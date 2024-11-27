@@ -1,0 +1,47 @@
+/* /estudiantes/css/perfil.css */
+
+/* Estilo para la imagen de perfil */
+#perfilImagen {
+    border: 5px solid #ffc107;
+    object-fit: cover;
+  }
+  
+  /* Estilos para las tarjetas de información */
+  .card-header {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .card-body p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilos para las listas de certificados, habilidades e idiomas */
+  #perfilCertificados, #perfilHabilidades, #perfilIdiomas {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #perfilCertificados li {
+    padding: 5px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #perfilCertificados li:last-child {
+    border-bottom: none;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+  }
+  
+  /* Ajustes para dispositivos móviles */
+  @media (max-width: 768px) {
+    #perfilImagen {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  

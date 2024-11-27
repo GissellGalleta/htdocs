@@ -1,16 +1,152 @@
 // /estudiantes/js/estudiantes.js
 
 // Datos pre-cargados simulando una respuesta de la base de datos
+// /estudiantes/js/estudiantes.js
+
+// Datos pre-cargados simulando una respuesta de la base de datos
 const estudiante = {
-    nombre: "Juan",
-    apellido: "Pérez",
-    imagenPerfil: "../assets/perfil.jpg", // Ruta de la imagen de perfil, si no hay, dejar null o ''
-    proyectosActivos: [
-     
-      // Puedes agregar más proyectos activos aquí
-    ],
-    limiteProyectos: 5
-  };
+  nombre: "Juan",
+  apellido: "Pérez",
+  email: "juan.perez@example.com",
+  imagenPerfil: "../assets/perfil.jpg", // Ruta de la imagen de perfil, si no hay, dejar null o ''
+  fechaNacimiento: "1995-08-15",
+  resumen: "Soy un estudiante de Ingeniería en Sistemas con experiencia en desarrollo web y aplicaciones móviles. Busco oportunidades para aplicar mis conocimientos y seguir creciendo profesionalmente.",
+  titulos: ["Ingeniero en Sistemas"],
+  universidad: "IT Veracruz",
+  semestre: 7,
+  certificados: ["Certificado en Desarrollo Web", "Diplomado en Gestión de Proyectos"],
+  habilidades: ["HTML", "CSS", "JavaScript", "Inglés - Avanzado"],
+  idiomas: ["Español - Nativo", "Inglés - Avanzado"],
+  proyectosActivos: [
+    {
+      id: 3,
+      titulo: "Desarrollo de Página Web",
+      descripcion: "Crear una página web corporativa para una empresa ficticia.",
+      tecnologias: ["HTML", "CSS", "JavaScript"],
+      empresa: "Creative Minds",
+      estado: "En progreso",
+      progreso: 45,
+      imagen: "../assets/proyecto3.jpg",
+      compañeros: ["Ana Gómez", "Luis Martínez"],
+      maestroAsesor: "Dr. Carlos Ruiz"
+    }
+    // Puedes agregar más proyectos activos aquí
+  ],
+  limiteProyectos: 5
+};
+
+
+// Función para cargar componentes HTML
+function cargarComponente(idElemento, url, callback) {
+  fetch(url)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(idElemento).innerHTML = data;
+      if (callback) callback();
+    })
+    .catch(error => console.error('Error al cargar el componente:', error));
+}
+
+// Función para inicializar el sidebar
+function inicializarSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const btnSidebarToggle = document.getElementById('btnSidebarToggle');
+  const btnCloseSidebar = document.getElementById('btnCloseSidebar');
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+
+  // Abrir el sidebar
+  btnSidebarToggle.addEventListener('click', function() {
+    sidebar.classList.add('active');
+    document.body.appendChild(overlay);
+  });
+
+  // Cerrar el sidebar
+  btnCloseSidebar.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    document.body.removeChild(overlay);
+  });
+
+  // Cerrar el sidebar al hacer clic fuera de él
+  overlay.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    document.body.removeChild(overlay);
+  });
+}
+
+// Función para cargar imagen de perfil o ícono de usuario
+function cargarImagenPerfil() {
+  const imagenPerfil = document.getElementById('imagenPerfil');
+  if (estudiante.imagenPerfil && estudiante.imagenPerfil.trim() !== '') {
+    imagenPerfil.src = estudiante.imagenPerfil;
+  } else {
+    imagenPerfil.src = 'https://via.placeholder.com/30x30.png?text=👤';
+  }
+}
+
+// Función para cargar el perfil
+function cargarPerfil() {
+  // Actualizar la información en el HTML
+  document.getElementById('perfilImagen').src = estudiante.imagenPerfil || 'https://via.placeholder.com/150';
+  document.getElementById('perfilNombre').textContent = `${estudiante.nombre} ${estudiante.apellido}`;
+  document.getElementById('perfilNombreCompleto').textContent = `${estudiante.nombre} ${estudiante.apellido}`;
+  document.getElementById('perfilEmail').textContent = estudiante.email;
+  document.getElementById('perfilFechaNacimiento').textContent = formatearFecha(estudiante.fechaNacimiento);
+  document.getElementById('perfilResumen').textContent = estudiante.resumen;
+  document.getElementById('perfilTitulos').textContent = estudiante.titulos.join(', ');
+  document.getElementById('perfilUniversidad').textContent = estudiante.universidad;
+  document.getElementById('perfilSemestre').textContent = `${estudiante.semestre}°`;
+  
+  // Cargar certificados
+  const certificadosList = document.getElementById('perfilCertificados');
+  certificadosList.innerHTML = ''; // Limpiar contenido previo
+  estudiante.certificados.forEach(certificado => {
+    const li = document.createElement('li');
+    li.textContent = certificado;
+    certificadosList.appendChild(li);
+  });
+
+  // Cargar habilidades
+  const habilidadesList = document.getElementById('perfilHabilidades');
+  habilidadesList.innerHTML = ''; // Limpiar contenido previo
+  estudiante.habilidades.forEach(habilidad => {
+    const li = document.createElement('li');
+    li.classList.add('list-inline-item');
+    const span = document.createElement('span');
+    span.classList.add('badge', 'bg-primary', 'me-1', 'mb-1');
+    span.textContent = habilidad;
+    li.appendChild(span);
+    habilidadesList.appendChild(li);
+  });
+
+  // Cargar idiomas
+  const idiomasList = document.getElementById('perfilIdiomas');
+  idiomasList.innerHTML = ''; // Limpiar contenido previo
+  estudiante.idiomas.forEach(idioma => {
+    const li = document.createElement('li');
+    li.classList.add('list-inline-item');
+    const span = document.createElement('span');
+    span.classList.add('badge', 'bg-info', 'me-1', 'mb-1');
+    span.textContent = idioma;
+    li.appendChild(span);
+    idiomasList.appendChild(li);
+  });
+}
+
+// Función para formatear la fecha de nacimiento
+function formatearFecha(fecha) {
+  const fechaObj = new Date(fecha);
+  const dia = String(fechaObj.getDate()).padStart(2, '0');
+  const mes = String(fechaObj.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan en 0
+  const año = fechaObj.getFullYear();
+  return `${dia}/${mes}/${año}`;
+}
+
+// Función para editar el perfil
+function editarPerfil() {
+  alert('Función para editar el perfil en desarrollo.');
+}
+
   
   const proyectosDisponibles = [
     {
