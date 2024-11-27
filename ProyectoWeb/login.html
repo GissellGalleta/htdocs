@@ -56,6 +56,8 @@
       <div id="student-register" class="d-none">
         <h2 class="text-center mb-4">Registro - Estudiante</h2>
         <form>
+          <!-- Botón Regresar -->
+          <a href="#" id="back-to-role-selection-teacher" class="btn btn-link text-white">&larr; Regresar</a>
           <!-- Datos Personales -->
           <h4>Datos Personales</h4>
           <div class="mb-3">
@@ -81,29 +83,16 @@
             <input type="text" class="form-control" id="student-name" required>
           </div>
           <div class="mb-3">
+            <label for="student-name" class="form-label">Numero telefonico</label>
+            <input type="text" class="form-control" id="student-name" required>
+          </div>
+          <div class="mb-3">
             <label for="student-dob" class="form-label">Fecha de Nacimiento</label>
             <input type="date" class="form-control" id="student-dob" required>
           </div>
 
-          <!-- Resumen Profesional -->
-          <h4>Resumen o Objetivo Profesional</h4>
-          <div class="mb-3">
-            <label for="student-summary" class="form-label">Descripción Breve</label>
-            <textarea class="form-control" id="student-summary" maxlength="100" rows="3" required></textarea>
-          </div>
-
           <!-- Formación Académica -->
-          <h4>Formación Académica</h4>
-          <div class="mb-3">
-            <label for="titles-input" class="form-label">Títulos Obtenidos</label>
-            <div id="titles-container" class="d-flex flex-wrap gap-2 mb-2">
-              <!-- Los títulos agregados aparecerán aquí -->
-            </div>
-            <div class="input-group">
-              <input type="text" id="titles-input" class="form-control" placeholder="Escribe un título y presiona Enter">
-              <button id="add-title-btn" type="button" class="btn btn-outline-primary">+ Añadir título</button>
-            </div>
-          </div>
+          <h4>Información Académica</h4>
           <div class="mb-3">
             <label for="student-university" class="form-label">Nombre de la Universidad</label>
             <input type="text" class="form-control" id="student-university" required>
@@ -111,10 +100,6 @@
           <div class="mb-3">
             <label for="student-semester" class="form-label">Semestre Cursando</label>
             <input type="number" class="form-control" id="student-semester" min="1" required>
-          </div>
-          <div class="mb-3">
-            <label for="student-certificates" class="form-label">Certificados o Diplomados</label>
-            <input type="file" class="form-control" id="student-certificates" accept=".pdf" multiple>
           </div>
 
           <!-- Habilidades -->
@@ -129,26 +114,68 @@
               <button id="add-tech-btn" type="button" class="btn btn-outline-primary">+ Añadir tecnología</button>
             </div>
           </div>
-
-          <!-- Idiomas -->
-          <h4>Idiomas</h4>
-          <div class="mb-3">
-            <label for="languages-input" class="form-label">Idiomas</label>
-            <div id="languages-container" class="d-flex flex-wrap gap-2 mb-2">
-                <!-- Los idiomas seleccionados aparecerán aquí -->
-              </div>
-              <div class="input-group">
-                <input type="text" id="languages-input" class="form-control" placeholder="Escribe un idioma y presiona Enter">
-                <button id="add-language-btn" type="button" class="btn btn-outline-primary">+ Añadir idioma</button>
-              </div>
-            </div>
-
+          <!-- Botón Crear Cuenta -->
           <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
         </form>
       </div>
-    </div>
+    
   </div>
+  <!-- Registro para Maestro -->
+<div id="teacher-register" class="d-none">
+  <h2 class="text-center mb-4">Registro - Profesor</h2>
+  <form>
+    <!-- Botón Regresar -->
+    <a href="#" id="back-to-role-selection-teacher" class="btn btn-link text-white">&larr; Regresar</a>
 
+    <!-- Datos Personales -->
+    <h4>Datos Personales</h4>
+    <div class="mb-3">
+      <label for="teacher-email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="teacher-email" required>
+    </div>
+    <div class="mb-3">
+      <label for="teacher-password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="teacher-password" minlength="8" required>
+      <small id="teacher-password-status" class="d-block mt-1"></small>
+    </div>
+    <div class="mb-3">
+      <label for="teacher-password-confirm" class="form-label">Confirmar Contraseña</label>
+      <input type="password" class="form-control" id="teacher-password-confirm" minlength="8" required>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="teacher-show-passwords">
+      <label for="teacher-show-passwords" class="form-check-label">Mostrar contraseñas</label>
+    </div>
+
+    <!-- Más Datos Personales -->
+    <div class="mb-3">
+      <label for="teacher-name" class="form-label">Nombre Completo</label>
+      <input type="text" class="form-control" id="teacher-name" required>
+    </div>
+    <div class="mb-3">
+      <label for="teacher-phone" class="form-label">Número telefónico</label>
+      <input type="text" class="form-control" id="teacher-phone" required>
+    </div>
+    <div class="mb-3">
+      <label for="teacher-dob" class="form-label">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="teacher-dob" required>
+    </div>
+
+    <!-- Formación Académica -->
+    <h4>Formación Académica</h4>
+    <div class="mb-3">
+      <label for="teacher-specialty" class="form-label">Especialidad</label>
+      <input type="text" class="form-control" id="teacher-specialty" required>
+    </div>
+    <div class="mb-3">
+      <label for="teacher-years" class="form-label">Años Laborando</label>
+      <input type="number" class="form-control" id="teacher-years" min="0" required>
+    </div>
+
+    <!-- Botón Crear Cuenta -->
+    <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
+  </form>
+</div>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
