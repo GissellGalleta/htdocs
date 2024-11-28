@@ -62,26 +62,18 @@ function cargarPerfil() {
         document.getElementById('perfilImagen').src = data.imagen || '../assets/perfil.png';
         document.getElementById('perfilNombre').textContent = data.nombre;
         document.getElementById('perfilEmail').textContent = data.email;
-        document.getElementById('perfilNombreCompleto').textContent = data.nombreCompleto;
+        document.getElementById('perfilNombreCompleto').textContent = data.nombreEmpresa;
         
         // Formatear la fecha de nacimiento
-        const fecha = new Date(data.fechaNacimiento);
+        const fecha = new Date(data.fechaFundación);
         const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
         const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
-        document.getElementById('perfilFechaNacimiento').textContent = fechaFormateada;
+        document.getElementById('perfilFechaFundación').textContent = fechaFormateada;
         
-        document.getElementById('perfilUniversidad').textContent = data.universidad;
-        document.getElementById('perfilSemestre').textContent = data.semestre;
+        document.getElementById('perfilRFC').textContent = data.RFC;
+        document.getElementById('perfilDirección').textContent = data.dirección;
+        document.getElementById('perfilNumTelefonico').textContent = data.numTelefonico;
   
-        // Cargar habilidades
-        const habilidadesList = document.getElementById('perfilHabilidades');
-        habilidadesList.innerHTML = ''; // Limpiar contenido previo
-        data.habilidades.forEach(habilidad => {
-          const li = document.createElement('li');
-          li.className = 'list-inline-item';
-          li.innerHTML = `<span class="badge bg-primary">${habilidad}</span>`;
-          habilidadesList.appendChild(li);
-        });
       })
       .catch(error => {
         console.error('Error al cargar el perfil:', error);

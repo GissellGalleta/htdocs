@@ -1,12 +1,11 @@
 {
-    "nombre": "Juan Pérez",
-    "email": "juan.perez@example.com",
-    "nombreCompleto": "Juan Carlos Pérez López",
-    "fechaNacimiento": "15/08/1995",
-    "universidad": "IT Veracruz",
-    "semestre": "7°",
-    "habilidades": ["HTML", "CSS", "JavaScript", "Inglés - Avanzado"],
-    "imagen": "../assets/perfil.jpg"
-  }
+  "nombre": "Cisco",
+  "email": "cisco@example.com",
+  "nombreEmpresa": "Cisco SA de CV",
+  "fechaFundacion": "15/08/1995",
+  "numTelefonico": "2254896574",
+  "RFC": "DSEF5SR8451",
+  "dirección": "Veracruz, ver"
+}
   
   

@@ -1,4 +1,5 @@
-{
+
+  {
     "nombre": "Juan Pérez",
     "email": "juan.perez@example.com",
     "nombreCompleto": "Juan Carlos Pérez López",
@@ -8,4 +9,3 @@
     "habilidades": ["HTML", "CSS", "JavaScript", "Inglés - Avanzado"],
     "imagen": "../assets/perfil.jpg"
   }
-  
