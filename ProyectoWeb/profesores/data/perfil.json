@@ -1,0 +1,9 @@
+{
+    "nombre": "Delio",
+    "email": "delio.coss@example.com",
+    "nombreCompleto": "Delio Coss",
+    "fechaNacimiento": "15/08/1995",
+    "especialidad": "Ing. en Sistemas Computacionales",
+    "añosLaborando": "20",
+    "imagen": "../assets/perfil.jpg"
+  }

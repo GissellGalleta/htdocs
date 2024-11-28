@@ -40,8 +40,8 @@ function inicializarSidebar() {
 // Función para cargar imagen de perfil o ícono de usuario
 function cargarImagenPerfil() {
   const imagenPerfil = document.getElementById('imagenPerfil');
-  if (estudiante.imagenPerfil && estudiante.imagenPerfil.trim() !== '') {
-    imagenPerfil.src = estudiante.imagenPerfil;
+  if (empresa.imagenPerfil && empresa.imagenPerfil.trim() !== '') {
+    imagenPerfil.src = empresa.imagenPerfil;
   } else {
     imagenPerfil.src = 'https://via.placeholder.com/30x30.png?text=👤';
   }
