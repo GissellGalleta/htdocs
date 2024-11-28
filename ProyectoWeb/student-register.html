@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Estudiante - Proyecto Web</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> <!-- Estilos personalizados -->
+</head>
+<body class="bg-light">
+  <div class="login-container d-flex justify-content-center align-items-center">
+    <div class="login-box bg-dark text-white p-4 rounded-3 shadow" style="opacity: 0.9; max-width: 500px; width: 100%;">
+      <!-- Registro Estudiante -->
+      <div id="student-register">
+        <h2 class="text-center mb-4">Registro - Estudiante</h2>
+        <form>
+          <!-- Botón Regresar -->
+          <a href="login.html" id="back-to-role-selection-student" class="btn btn-link text-white">&larr; Regresar</a>
+          <!-- Datos Personales -->
+          <h4>Datos Personales</h4>
+          <div class="mb-3">
+            <label for="student-email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="student-email" required>
+          </div>
+          <div class="mb-3">
+            <label for="student-password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="student-password" minlength="8" required>
+            <small id="password-status" class="d-block mt-1"></small>
+          </div>
+          <div class="mb-3">
+            <label for="student-password-confirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="student-password-confirm" minlength="8" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="show-passwords">
+            <label for="show-passwords" class="form-check-label">Mostrar contraseñas</label>
+          </div>
+          <small id="password-error" class="text-danger d-none">Las contraseñas no coinciden.</small>
+          <div class="mb-3">
+            <label for="student-name" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="student-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="student-phone" class="form-label">Número Telefónico</label>
+            <input type="text" class="form-control" id="student-phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="student-dob" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="student-dob" required>
+          </div>
+
+          <!-- Formación Académica -->
+          <h4>Información Académica</h4>
+          <div class="mb-3">
+            <label for="student-university" class="form-label">Nombre de la Universidad</label>
+            <input type="text" class="form-control" id="student-university" required>
+          </div>
+          <div class="mb-3">
+            <label for="student-semester" class="form-label">Semestre Cursando</label>
+            <input type="number" class="form-control" id="student-semester" min="1" required>
+          </div>
+
+          <!-- Habilidades -->
+          <h4>Habilidades</h4>
+          <div class="mb-3">
+            <label for="technologies-input" class="form-label">Tecnologías que Dominas</label>
+            <div id="technologies-container" class="d-flex flex-wrap gap-2 mb-2">
+              <!-- Las tecnologías seleccionadas aparecerán aquí -->
+            </div>
+            <div class="input-group">
+              <input type="text" id="technologies-input" class="form-control" placeholder="Escribe una tecnología y presiona Enter">
+              <button id="add-tech-btn" type="button" class="btn btn-outline-primary">+ Añadir tecnología</button>
+            </div>
+          </div>
+          <!-- Botón Crear Cuenta -->
+          <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/student-script.js"></script>
+</body>
+</html>

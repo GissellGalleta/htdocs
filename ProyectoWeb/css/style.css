@@ -44,7 +44,6 @@ body {
   transition: color 0.3s ease; /* Transición para hacer el cambio de color más suave */
 }
 
-
 /* Estilo para los chips (elementos seleccionados) */
 .selected-item {
   background-color: #198754; /* Verde */
@@ -68,10 +67,3 @@ body {
 .selected-item button:hover {
   color: #d4d4d4; /* Color al pasar el cursor */
 }
-
-#teacher-register {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
