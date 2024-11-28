@@ -1,39 +1,50 @@
 // /estudiantes/js/perfil.js
 
-// Datos de ejemplo del perfil (reemplazar con datos reales de la base de datos)
-const perfil = {
-    nombre: "Juan Pérez",
-    fechaNacimiento: "15/08/1995",
-    carrera: "Ingeniería en Sistemas",
-    semestre: "7°",
-    universidad: "IT Veracruz",
-    habilidades: ["HTML", "CSS", "JavaScript", "Inglés - Avanzado"],
-    imagen: "../assets/perfil.jpg"
-  };
-  
-  // Función para cargar la información del perfil
-  function cargarPerfil() {
-    // Actualizar la información en el HTML
-    document.getElementById('perfilImagen').src = perfil.imagen || 'https://via.placeholder.com/150';
-    document.getElementById('perfilNombre').textContent = perfil.nombre;
-    document.getElementById('perfilNombreCompleto').textContent = perfil.nombre;
-    document.getElementById('perfilFechaNacimiento').textContent = perfil.fechaNacimiento;
-    document.getElementById('perfilCarrera').textContent = perfil.carrera;
-    document.getElementById('perfilSemestre').textContent = perfil.semestre;
-    document.getElementById('perfilUniversidad').textContent = perfil.universidad;
-  
-    // Cargar habilidades
-    const habilidadesList = document.getElementById('perfilHabilidades');
-    habilidadesList.innerHTML = ''; // Limpiar contenido previo
-    perfil.habilidades.forEach(habilidad => {
-      const li = document.createElement('li');
-      li.textContent = habilidad;
-      habilidadesList.appendChild(li);
+// Función para cargar la información del perfil
+function cargarPerfil() {
+  // Realizar una solicitud para obtener el JSON local
+  fetch('../data/perfil.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Actualizar la información en el HTML con los datos recibidos
+      document.getElementById('perfilImagen').src = data.imagen || '../assets/perfil.jpg';
+      document.getElementById('perfilNombre').textContent = data.nombre;
+      document.getElementById('perfilEmail').textContent = data.email;
+      document.getElementById('perfilNombreCompleto').textContent = data.nombreCompleto;
+      
+      // Formatear la fecha de nacimiento
+      const fecha = new Date(data.fechaNacimiento);
+      const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+      const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+      document.getElementById('perfilFechaNacimiento').textContent = fechaFormateada;
+      
+      document.getElementById('perfilUniversidad').textContent = data.universidad;
+      document.getElementById('perfilSemestre').textContent = data.semestre;
+
+      // Cargar habilidades
+      const habilidadesList = document.getElementById('perfilHabilidades');
+      habilidadesList.innerHTML = ''; // Limpiar contenido previo
+      data.habilidades.forEach(habilidad => {
+        const li = document.createElement('li');
+        li.className = 'list-inline-item';
+        li.innerHTML = `<span class="badge bg-primary">${habilidad}</span>`;
+        habilidadesList.appendChild(li);
+      });
+    })
+    .catch(error => {
+      console.error('Error al cargar el perfil:', error);
+      // Opcional: Mostrar un mensaje de error en el HTML
+      const mainContent = document.querySelector('main.container');
+      mainContent.innerHTML = '<p class="text-danger">Error al cargar el perfil. Por favor, inténtalo más tarde.</p>';
     });
-  }
-  
-  // Función para editar el perfil
-  function editarPerfil() {
-    alert('Función para editar el perfil en desarrollo.');
-  }
-  
+}
+
+// Función para editar el perfil
+function editarPerfil() {
+  alert('Función para editar el perfil en desarrollo.');
+}
