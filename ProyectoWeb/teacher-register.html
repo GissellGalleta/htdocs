@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Profesor - Proyecto Web</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> <!-- Estilos personalizados -->
+</head>
+<body class="bg-light">
+  <div class="login-container d-flex justify-content-center align-items-center">
+    <div class="login-box bg-dark text-white p-4 rounded-3 shadow" style="opacity: 0.9; max-width: 500px; width: 100%;">
+      <!-- Registro Profesor -->
+      <div id="teacher-register">
+        <h2 class="text-center mb-4">Registro - Profesor</h2>
+        <form>
+          <!-- Botón Regresar -->
+          <a href="login.html" id="back-to-role-selection-teacher" class="btn btn-link text-white">&larr; Regresar</a>
+          <!-- Datos Personales -->
+          <h4>Datos Personales</h4>
+          <div class="mb-3">
+            <label for="teacher-email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="teacher-email" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacher-password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="teacher-password" minlength="8" required>
+            <small id="password-status" class="d-block mt-1"></small>
+          </div>
+          <div class="mb-3">
+            <label for="teacher-password-confirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="teacher-password-confirm" minlength="8" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="show-passwords">
+            <label for="show-passwords" class="form-check-label">Mostrar contraseñas</label>
+          </div>
+          <small id="password-error" class="text-danger d-none">Las contraseñas no coinciden.</small>
+          <div class="mb-3">
+            <label for="teacher-name" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="teacher-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacher-phone" class="form-label">Número Telefónico</label>
+            <input type="text" class="form-control" id="teacher-phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacher-dob" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="teacher-dob" required>
+          </div>
+
+          <!-- Información Profesional -->
+          <h4>Información Profesional</h4>
+          <div class="mb-3">
+            <label for="teacher-specialty" class="form-label">Especialidad</label>
+            <input type="text" class="form-control" id="teacher-specialty" required>
+          </div>
+          <div class="mb-3">
+            <label for="teacher-experience" class="form-label">Años Laborando</label>
+            <input type="number" class="form-control" id="teacher-experience" min="0" required>
+          </div>
+
+          <!-- Botón Crear Cuenta -->
+          <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/teacher-script.js"></script>
+</body>
+</html>
