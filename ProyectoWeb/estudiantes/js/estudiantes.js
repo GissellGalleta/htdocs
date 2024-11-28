@@ -163,7 +163,7 @@ function editarPerfil() {
       descripcion: "Desarrollar una plataforma de comercio electrónico.",
       tecnologias: ["React", "Node.js", "MongoDB"],
       empresa: "Online Market",
-      imagen: "../assets/proyecto2.jpg"
+      imagen: "../assets/proyecto1.jpg"
     },
     {
         id: 4,
@@ -171,7 +171,7 @@ function editarPerfil() {
         descripcion: "Crear un software de gestión para una empresa de logística.",
         tecnologias: ["Java", "Spring Boot", "MySQL"],
         empresa: "Logistic Solutions",
-        imagen: "../assets/proyecto4.jpg"
+        imagen: "../assets/proyecto1.jpg"
     },
     {
         id: 5,
@@ -179,7 +179,7 @@ function editarPerfil() {
         descripcion: "Desarrollar un videojuego de plataformas en 2D.",
         tecnologias: ["Unity", "C#"],
         empresa: "Game Studios",
-        imagen: "../assets/proyecto5.jpg"
+        imagen: "../assets/proyecto1.jpg"
     },
     {
         id: 6,

@@ -1,0 +1,146 @@
+/* /empresas/css/empresas.css */
+
+/* Estilos personalizados */
+
+/* Ajuste para eliminar espacio entre Navbar y contenido */
+body {
+    padding-top: 70px; /* Altura de la Navbar fija */
+    padding-bottom: 70px; /* Altura del Footer fijo */
+    overflow-x: hidden; /* Evita scroll horizontal */
+  }
+  
+  /* Estilos para la imagen de perfil en la Navbar */
+  .navbar .nav-link img {
+    border-radius: 50%;
+  }
+  
+  /* Estilos para el sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculto por defecto */
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1040; /* Por encima de la Navbar */
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+  }
+  
+  .sidebar .components {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .sidebar .components li {
+    padding: 10px 15px;
+  }
+  
+  .sidebar .components li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .sidebar .components li a:hover {
+    background-color: #495057;
+  }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1039; /* Por debajo del sidebar */
+  }
+  
+  /* Ajustes para Navbar fija */
+  .navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  
+  /* Estilos para el botón del sidebar en la Navbar */
+  #btnSidebarToggle {
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  
+  /* Estilos para el botón de cerrar en el sidebar */
+  #btnCloseSidebar {
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  
+  /* Estilos para el contenido principal */
+  main.container {
+    margin-top: 80px;
+  }
+  
+  /* Estilos para las tarjetas de proyectos */
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body h5 {
+    font-size: 1.25rem;
+  }
+  
+  .card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsividad adicional si es necesaria */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .sidebar.active {
+      left: -200px;
+    }
+  
+    .sidebar .components li {
+      padding: 10px;
+    }
+  
+    .sidebar .components li a {
+      font-size: 0.9rem;
+    }
+  
+    .sidebar-header h3 {
+      font-size: 1.25rem;
+    }
+  
+    main.container {
+      margin-top: 60px;
+    }
+  }
+  
