@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Empresa - Proyecto Web</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> <!-- Estilos personalizados -->
+</head>
+<body class="bg-light">
+  <div class="login-container d-flex justify-content-center align-items-center">
+    <div class="login-box bg-dark text-white p-4 rounded-3 shadow" style="opacity: 0.9; max-width: 500px; width: 100%;">
+      <!-- Registro Empresa -->
+      <div id="company-register">
+        <h2 class="text-center mb-4">Registro - Empresa</h2>
+        <form>
+          <!-- Botón Regresar -->
+          <a href="login.html" id="back-to-role-selection-company" class="btn btn-link text-white">&larr; Regresar</a>
+          
+          <!-- Datos de la Empresa -->
+          <h4 class="mt-3">Datos de la Empresa</h4>
+          <div class="mb-3">
+            <label for="company-email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="company-email" placeholder="empresa@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="company-password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="company-password" placeholder="Contraseña" minlength="8" required>
+            <small id="password-status" class="d-block mt-1"></small>
+          </div>
+          <div class="mb-3">
+            <label for="company-password-confirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="company-password-confirm" placeholder="Confirmar Contraseña" minlength="8" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="show-passwords">
+            <label for="show-passwords" class="form-check-label">Mostrar contraseñas</label>
+          </div>
+          <small id="password-error" class="text-danger d-none">Las contraseñas no coinciden.</small>
+          
+          <div class="mb-3">
+            <label for="company-name" class="form-label">Nombre de la Empresa</label>
+            <input type="text" class="form-control" id="company-name" placeholder="Nombre de la Empresa" required>
+          </div>
+          <div class="mb-3">
+            <label for="company-phone" class="form-label">Número Telefónico</label>
+            <input type="text" class="form-control" id="company-phone" placeholder="Número Telefónico" required>
+          </div>
+          <div class="mb-3">
+            <label for="company-foundation" class="form-label">Fecha de Fundación</label>
+            <input type="date" class="form-control" id="company-foundation" required>
+          </div>
+
+          <!-- Información de la Empresa -->
+          <h4 class="mt-4">Información de la Empresa</h4>
+          <div class="mb-3">
+            <label for="company-rfc" class="form-label">RFC</label>
+            <input type="text" class="form-control" id="company-rfc" placeholder="RFC de la Empresa" required>
+          </div>
+          <div class="mb-3">
+            <label for="company-address" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="company-address" placeholder="Dirección de la Empresa" required>
+          </div>
+
+          <!-- Botón Crear Cuenta -->
+          <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/company-script.js"></script>
+</body>
+</html>
