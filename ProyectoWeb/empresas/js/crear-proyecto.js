@@ -1,4 +1,30 @@
 // /empresas/js/crear-proyecto.js
+// Función para inicializar el sidebar
+function inicializarSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const btnSidebarToggle = document.getElementById('btnSidebarToggle');
+  const btnCloseSidebar = document.getElementById('btnCloseSidebar');
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+
+  // Abrir el sidebar
+  btnSidebarToggle.addEventListener('click', function() {
+    sidebar.classList.add('active');
+    document.body.appendChild(overlay);
+  });
+
+  // Cerrar el sidebar
+  btnCloseSidebar.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    document.body.removeChild(overlay);
+  });
+
+  // Cerrar el sidebar al hacer clic fuera de él
+  overlay.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    document.body.removeChild(overlay);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const formCrearProyecto = document.getElementById('formCrearProyecto');
@@ -28,32 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-// Función para inicializar el sidebar
-function inicializarSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const btnSidebarToggle = document.getElementById('btnSidebarToggle');
-  const btnCloseSidebar = document.getElementById('btnCloseSidebar');
-  const overlay = document.createElement('div');
-  overlay.id = 'overlay';
 
-  // Abrir el sidebar
-  btnSidebarToggle.addEventListener('click', function() {
-    sidebar.classList.add('active');
-    document.body.appendChild(overlay);
-  });
-
-  // Cerrar el sidebar
-  btnCloseSidebar.addEventListener('click', function() {
-    sidebar.classList.remove('active');
-    document.body.removeChild(overlay);
-  });
-
-  // Cerrar el sidebar al hacer clic fuera de él
-  overlay.addEventListener('click', function() {
-    sidebar.classList.remove('active');
-    document.body.removeChild(overlay);
-  });
-}
 
 
 
