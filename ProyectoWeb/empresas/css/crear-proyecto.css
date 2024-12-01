@@ -1,0 +1,18 @@
+/* /empresas/css/crear-proyecto.css */
+
+/* Estilos personalizados para el formulario de creación de proyectos */
+#formCrearProyecto .form-label {
+    font-weight: bold;
+  }
+  
+  #formCrearProyecto .form-control {
+    border-radius: 5px;
+  }
+  
+  /* Ajustes para el botón */
+  #formCrearProyecto button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+  
