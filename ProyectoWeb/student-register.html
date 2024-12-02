@@ -1,11 +1,15 @@
+<!-- ProyectoWeb/student-register.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Registro Estudiante - Proyecto Web</title>
+  <!-- Meta tags para responsividad -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet"> <!-- Estilos personalizados -->
+
 </head>
 <body class="bg-light">
   <div class="login-container d-flex justify-content-center align-items-center">
@@ -13,11 +17,12 @@
       <!-- Registro Estudiante -->
       <div id="student-register">
         <h2 class="text-center mb-4">Registro - Estudiante</h2>
-        <form>
+        <form id="student-form">
           <!-- Botón Regresar -->
           <a href="login.html" id="back-to-role-selection-student" class="btn btn-link text-white">&larr; Regresar</a>
+          
           <!-- Datos Personales -->
-          <h4>Datos Personales</h4>
+          <h4 class="mt-3">Datos Personales</h4>
           <div class="mb-3">
             <label for="student-email" class="form-label">Email</label>
             <input type="email" class="form-control" id="student-email" required>
@@ -36,6 +41,7 @@
             <label for="show-passwords" class="form-check-label">Mostrar contraseñas</label>
           </div>
           <small id="password-error" class="text-danger d-none">Las contraseñas no coinciden.</small>
+          
           <div class="mb-3">
             <label for="student-name" class="form-label">Nombre Completo</label>
             <input type="text" class="form-control" id="student-name" required>
@@ -50,7 +56,7 @@
           </div>
 
           <!-- Formación Académica -->
-          <h4>Información Académica</h4>
+          <h4 class="mt-4">Información Académica</h4>
           <div class="mb-3">
             <label for="student-university" class="form-label">Nombre de la Universidad</label>
             <input type="text" class="form-control" id="student-university" required>
@@ -61,7 +67,7 @@
           </div>
 
           <!-- Habilidades -->
-          <h4>Habilidades</h4>
+          <h4 class="mt-4">Habilidades</h4>
           <div class="mb-3">
             <label for="technologies-input" class="form-label">Tecnologías que Dominas</label>
             <div id="technologies-container" class="d-flex flex-wrap gap-2 mb-2">
@@ -72,12 +78,21 @@
               <button id="add-tech-btn" type="button" class="btn btn-outline-primary">+ Añadir tecnología</button>
             </div>
           </div>
+          
+          <!-- Indicador de Carga -->
+          <div id="loading-indicator" class="d-none text-center mb-3">
+            <div class="spinner-border text-warning" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+          
           <!-- Botón Crear Cuenta -->
-          <button type="button" class="btn btn-success w-100 mt-4" onclick="window.location.href='estudiantes/views/perfil.html'">Crear Cuenta</button>
+          <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
         </form>
       </div>
     </div>
   </div>
+  
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/student-script.js"></script>

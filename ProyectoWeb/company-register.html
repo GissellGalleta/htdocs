@@ -1,11 +1,16 @@
+<!-- ProyectoWeb/company-register.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Registro Empresa - Proyecto Web</title>
+  <!-- Meta tags para responsividad -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
   <link href="css/style.css" rel="stylesheet"> <!-- Estilos personalizados -->
+  
 </head>
 <body class="bg-light">
   <div class="login-container d-flex justify-content-center align-items-center">
@@ -13,7 +18,7 @@
       <!-- Registro Empresa -->
       <div id="company-register">
         <h2 class="text-center mb-4">Registro - Empresa</h2>
-        <form>
+        <form id="company-form">
           <!-- Botón Regresar -->
           <a href="login.html" id="back-to-role-selection-company" class="btn btn-link text-white">&larr; Regresar</a>
           
@@ -62,6 +67,13 @@
             <input type="text" class="form-control" id="company-address" placeholder="Dirección de la Empresa" required>
           </div>
 
+          <!-- Indicador de Carga -->
+          <div id="loading-indicator" class="d-none text-center mb-3">
+            <div class="spinner-border text-warning" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+          
           <!-- Botón Crear Cuenta -->
           <button type="submit" class="btn btn-success w-100 mt-4">Crear Cuenta</button>
         </form>
