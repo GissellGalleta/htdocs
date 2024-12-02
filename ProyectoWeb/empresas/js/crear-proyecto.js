@@ -1,4 +1,15 @@
 // /empresas/js/crear-proyecto.js
+// Función para cargar componentes HTML
+function cargarComponente(idElemento, url, callback) {
+  fetch(url)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(idElemento).innerHTML = data;
+      if (callback) callback();
+    })
+    .catch(error => console.error('Error al cargar el componente:', error));
+}
+
 // Función para inicializar el sidebar
 function inicializarSidebar() {
   const sidebar = document.getElementById('sidebar');
