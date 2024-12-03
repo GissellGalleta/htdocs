@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "imagen": "../assets/proyecto2.jpg",
+    "imagen": "../assets/proyecto1.jpg",
     "titulo": "Aplicación Móvil de Salud",
     "categoria": "Aplicaciones Móviles",
     "empresa": "Cisco SA de CV",
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "imagen": "../assets/proyecto3.jpg",
+    "imagen": "../assets/proyecto1.jpg",
     "titulo": "Plataforma de E-Learning",
     "categoria": "Educación",
     "empresa": "Cisco SA de CV",

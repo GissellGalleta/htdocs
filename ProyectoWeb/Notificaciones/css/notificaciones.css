@@ -1,0 +1,65 @@
+/* Estilos para la lista de notificaciones */
+.list-group-item {
+    transition: background-color 0.2s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .list-group-item h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .list-group-item p {
+    margin-bottom: 0.5rem;
+  }
+
+     /* Estilos para el sidebar */
+     .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Oculto por defecto */
+      width: 250px;
+      height: 100%;
+      background-color: #343a40;
+      color: #fff;
+      transition: left 0.3s ease;
+      z-index: 1040; /* Por encima de la Navbar */
+    }
+    
+    .sidebar.active {
+      left: 0;
+    }
+    
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+    }
+    
+    .sidebar-header h3 {
+      margin: 0;
+    }
+    
+    .sidebar .components {
+      padding: 0;
+      list-style: none;
+    }
+    
+    .sidebar .components li {
+      padding: 10px 15px;
+    }
+    
+    .sidebar .components li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .sidebar .components li a:hover {
+      background-color: #495057;
+    }
+  

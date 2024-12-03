@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "destinatario": "empresa",
+      "titulo": "Nueva postulación de estudiante",
+      "mensaje": "El estudiante Juan Pérez se ha postulado al proyecto Sistema de Gestión de Inventarios.",
+      "fecha": "2024-09-01T10:30:00",
+      "enlace": "/ProyectoWeb/Proyectos/views/detalle-proyecto.html?id=1"
+    },
+    {
+      "id": 2,
+      "destinatario": "empresa",
+      "titulo": "Nueva postulación de profesor",
+      "mensaje": "El profesor María López se ha postulado como asesor al proyecto Aplicación Móvil de Salud.",
+      "fecha": "2024-09-02T11:00:00",
+      "enlace": "/ProyectoWeb/Proyectos/views/detalle-proyecto.html?id=2"
+    },
+    {
+      "id": 3,
+      "destinatario": "estudiante",
+      "titulo": "Postulación aceptada",
+      "mensaje": "La empresa Cisco SA de CV ha aceptado tu postulación al proyecto Plataforma de E-Learning.",
+      "fecha": "2024-09-03T12:15:00",
+      "enlace": "/ProyectoWeb/Proyectos/views/detalle-proyecto.html?id=3"
+    },
+    {
+      "id": 4,
+      "destinatario": "profesor",
+      "titulo": "Postulación aceptada",
+      "mensaje": "La empresa Cisco SA de CV ha aceptado tu postulación como asesor al proyecto Plataforma de E-Learning.",
+      "fecha": "2024-09-04T14:45:00",
+      "enlace": "/ProyectoWeb/Proyectos/views/detalle-proyecto.html?id=3"
+    }
+  ]
+  
