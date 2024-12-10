@@ -1,94 +1,83 @@
 // /estudiantes/js/perfil.js
 
-// Función para cargar componentes HTML
-function cargarComponente(idElemento, url, callback) {
-  fetch(url)
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById(idElemento).innerHTML = data;
-      if (callback) callback();
-    })
-    .catch(error => console.error('Error al cargar el componente:', error));
-}
-// Función para inicializar el sidebar
-function inicializarSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const btnSidebarToggle = document.getElementById('btnSidebarToggle');
-  const btnCloseSidebar = document.getElementById('btnCloseSidebar');
-  const overlay = document.createElement('div');
-  overlay.id = 'overlay';
+// Función para cargar la información del perfil
+function cargarPerfil() {
+  // Actualizar la información en el HTML
+  const perfilImagen = document.getElementById('perfilImagen');
+  const perfilNombre = document.getElementById('perfilNombre');
+  const perfilNombreCompleto = document.getElementById('perfilNombreCompleto');
+  const perfilEmail = document.getElementById('perfilEmail');
+  const perfilFechaNacimiento = document.getElementById('perfilFechaNacimiento');
+  const perfilUniversidad = document.getElementById('perfilUniversidad');
+  const perfilSemestre = document.getElementById('perfilSemestre');
+  const perfilHabilidades = document.getElementById('perfilHabilidades');
 
-  // Abrir el sidebar
-  btnSidebarToggle.addEventListener('click', function() {
-    sidebar.classList.add('active');
-    document.body.appendChild(overlay);
-  });
-
-  // Cerrar el sidebar
-  btnCloseSidebar.addEventListener('click', function() {
-    sidebar.classList.remove('active');
-    document.body.removeChild(overlay);
-  });
-
-  // Cerrar el sidebar al hacer clic fuera de él
-  overlay.addEventListener('click', function() {
-    sidebar.classList.remove('active');
-    document.body.removeChild(overlay);
-  });
-}
-
-// Función para cargar imagen de perfil o ícono de usuario
-function cargarImagenPerfil() {
-  const imagenPerfil = document.getElementById('imagenPerfil');
-  if (empresa.imagenPerfil && empresa.imagenPerfil.trim() !== '') {
-    imagenPerfil.src = empresa.imagenPerfil;
+  if (perfilImagen) {
+    perfilImagen.src = estudiante.imagenPerfil || 'https://via.placeholder.com/150';
   } else {
-    imagenPerfil.src = 'https://via.placeholder.com/30x30.png?text=👤';
+    console.error('El elemento con ID "perfilImagen" no se encontró en el DOM.');
+  }
+
+  if (perfilNombre) {
+    perfilNombre.textContent = `${estudiante.nombre} ${estudiante.apellido}`;
+  } else {
+    console.error('El elemento con ID "perfilNombre" no se encontró en el DOM.');
+  }
+
+  if (perfilNombreCompleto) {
+    perfilNombreCompleto.textContent = `${estudiante.nombre} ${estudiante.apellido}`;
+  } else {
+    console.error('El elemento con ID "perfilNombreCompleto" no se encontró en el DOM.');
+  }
+
+  if (perfilEmail) {
+    perfilEmail.textContent = estudiante.email;
+  } else {
+    console.error('El elemento con ID "perfilEmail" no se encontró en el DOM.');
+  }
+
+  if (perfilFechaNacimiento) {
+    perfilFechaNacimiento.textContent = formatearFecha(estudiante.fechaNacimiento);
+  } else {
+    console.error('El elemento con ID "perfilFechaNacimiento" no se encontró en el DOM.');
+  }
+
+  if (perfilUniversidad) {
+    perfilUniversidad.textContent = estudiante.universidad;
+  } else {
+    console.error('El elemento con ID "perfilUniversidad" no se encontró en el DOM.');
+  }
+
+  if (perfilSemestre) {
+    perfilSemestre.textContent = `${estudiante.semestre}°`;
+  } else {
+    console.error('El elemento con ID "perfilSemestre" no se encontró en el DOM.');
+  }
+
+  // Cargar habilidades
+  if (perfilHabilidades) {
+    perfilHabilidades.innerHTML = ''; // Limpiar contenido previo
+    estudiante.habilidades.forEach(habilidad => {
+      const li = document.createElement('li');
+      li.classList.add('list-inline-item');
+      const span = document.createElement('span');
+      span.classList.add('badge', 'bg-primary', 'me-1', 'mb-1');
+      span.textContent = habilidad;
+      li.appendChild(span);
+      perfilHabilidades.appendChild(li);
+    });
+  } else {
+    console.error('El elemento con ID "perfilHabilidades" no se encontró en el DOM.');
   }
 }
 
-// Función para cargar la información del perfil
-function cargarPerfil() {
-  // Realizar una solicitud para obtener el JSON local
-  fetch('../data/perfil.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Actualizar la información en el HTML con los datos recibidos
-      document.getElementById('perfilImagen').src = data.imagen || '../assets/perfil.jpg';
-      document.getElementById('perfilNombre').textContent = data.nombre;
-      document.getElementById('perfilEmail').textContent = data.email;
-      document.getElementById('perfilNombreCompleto').textContent = data.nombreCompleto;
-      
-      // Formatear la fecha de nacimiento
-      const fecha = new Date(data.fechaNacimiento);
-      const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-      const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
-      document.getElementById('perfilFechaNacimiento').textContent = fechaFormateada;
-      
-      document.getElementById('perfilUniversidad').textContent = data.universidad;
-      document.getElementById('perfilSemestre').textContent = data.semestre;
-
-      // Cargar habilidades
-      const habilidadesList = document.getElementById('perfilHabilidades');
-      habilidadesList.innerHTML = ''; // Limpiar contenido previo
-      data.habilidades.forEach(habilidad => {
-        const li = document.createElement('li');
-        li.className = 'list-inline-item';
-        li.innerHTML = `<span class="badge bg-primary">${habilidad}</span>`;
-        habilidadesList.appendChild(li);
-      });
-    })
-    .catch(error => {
-      console.error('Error al cargar el perfil:', error);
-      // Opcional: Mostrar un mensaje de error en el HTML
-      const mainContent = document.querySelector('main.container');
-      mainContent.innerHTML = '<p class="text-danger">Error al cargar el perfil. Por favor, inténtalo más tarde.</p>';
-    });
+// Función para formatear la fecha de nacimiento
+function formatearFecha(fecha) {
+  const fechaObj = new Date(fecha);
+  const dia = String(fechaObj.getDate()).padStart(2, '0');
+  const mes = String(fechaObj.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan en 0
+  const año = fechaObj.getFullYear();
+  return `${dia}/${mes}/${año}`;
 }
 
 // Función para editar el perfil
