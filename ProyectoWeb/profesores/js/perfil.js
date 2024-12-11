@@ -48,41 +48,4 @@ function cargarComponente(idElemento, url, callback) {
   }
   
   // Función para cargar la información del perfil
-  function cargarPerfil() {
-      // Realizar una solicitud para obtener el JSON local
-      fetch('../data/perfil.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Actualizar la información en el HTML con los datos recibidos
-          document.getElementById('perfilImagen').src = data.imagen || '../assets/perfil.png';
-          document.getElementById('perfilNombre').textContent = data.nombre;
-          document.getElementById('perfilEmail').textContent = data.email;
-          document.getElementById('perfilNombreCompleto').textContent = data.nombreCompleto;
-          
-          // Formatear la fecha de nacimiento
-          const fecha = new Date(data.fechaNacimiento);
-          const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-          const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
-          document.getElementById('perfilFechaNacimiento').textContent = fechaFormateada;
-          
-          document.getElementById('perfilEspecialidad').textContent = data.especialidad;
-          document.getElementById('perfilAñosLaborando').textContent = data.añosLaborando;
-    
-        })
-        .catch(error => {
-          console.error('Error al cargar el perfil:', error);
-          // Opcional: Mostrar un mensaje de error en el HTML
-          const mainContent = document.querySelector('main.container');
-          mainContent.innerHTML = '<p class="text-danger">Error al cargar el perfil. Por favor, inténtalo más tarde.</p>';
-        });
-    }
-    
-    // Función para editar el perfil
-    function editarPerfil() {
-      alert('Función para editar el perfil en desarrollo.');
-    }
+  c

@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "imagen": "../assets/proyecto1.jpg",
+      "titulo": "Sistema de Gestión de Inventarios",
+      "categoria": "Desarrollo Web",
+      "empresa": "Cisco SA de CV",
+      "descripcion": "Desarrollo de un sistema integral para la gestión de inventarios que optimiza el control y seguimiento de productos en tiempo real.",
+      "fechaInicio": "2024-01-15",
+      "fechaFin": "2024-06-30"
+    },
+    {
+      "id": 2,
+      "imagen": "../assets/proyecto1.jpg",
+      "titulo": "Aplicación Móvil de Salud",
+      "categoria": "Aplicaciones Móviles",
+      "empresa": "Cisco SA de CV",
+      "descripcion": "Creación de una aplicación móvil que facilita el seguimiento de la salud y el bienestar de los usuarios, integrando funcionalidades de monitoreo y recordatorios.",
+      "fechaInicio": "2024-02-01",
+      "fechaFin": "2024-07-15"
+    },
+    {
+      "id": 3,
+      "imagen": "../assets/proyecto1.jpg",
+      "titulo": "Plataforma de E-Learning",
+      "categoria": "Educación",
+      "empresa": "Cisco SA de CV",
+      "descripcion": "Desarrollo de una plataforma educativa en línea que ofrece cursos interactivos y recursos didácticos para estudiantes de diversas disciplinas.",
+      "fechaInicio": "2024-03-10",
+      "fechaFin": "2024-08-20"
+    }
+  ]
+  

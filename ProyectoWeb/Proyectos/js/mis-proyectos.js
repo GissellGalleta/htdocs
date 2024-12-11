@@ -39,7 +39,7 @@ function inicializarSidebar() {
 
 function cargarProyectos() {
   // Realizar una solicitud para obtener el JSON local
-  fetch('../data/proyectos.json')
+  fetch('../data/mis-proyectos.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error al cargar los proyectos: ' + response.statusText);
