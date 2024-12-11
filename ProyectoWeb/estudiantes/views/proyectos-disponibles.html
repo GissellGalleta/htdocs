@@ -1,0 +1,86 @@
+<!-- /estudiantes/views/proyectos-disponibles.html -->
+<div>
+    <script>
+      // Suponiendo que 'proyectosDisponibles' y 'estudiante' ya están definidas globalmente por 'estudiantes.js'.
+      
+      (function() {
+        const tituloProyectos = document.getElementById('tituloProyectos');
+        const proyectosLista = document.getElementById('proyectosLista');
+
+        // Función para ir a la página de detalles del proyecto disponible
+        function verDetalleProyectoDisponible(idProyecto) {
+          window.location.href = `../views/detalles-proyecto-disponible.html?id=${idProyecto}`;
+        }
+  
+        if (tituloProyectos) {
+          tituloProyectos.textContent = 'Proyectos Disponibles';
+        } else {
+          console.error('El elemento con ID "tituloProyectos" no se encontró en el DOM.');
+        }
+  
+        if (proyectosLista) {
+          proyectosLista.innerHTML = ''; // Limpiar contenido previo
+  
+          proyectosDisponibles.forEach(proyecto => {
+            const proyectoCol = document.createElement('div');
+            proyectoCol.classList.add('col-md-4');
+  
+            const proyectoCard = document.createElement('div');
+            proyectoCard.classList.add('card', 'mb-4');
+  
+            // Imagen del proyecto
+            const img = document.createElement('img');
+            img.src = proyecto.imagen || '../assets/default-project.jpg';
+            img.classList.add('card-img-top');
+            img.alt = proyecto.titulo;
+  
+            // Cuerpo de la tarjeta
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+  
+            const titulo = document.createElement('h5');
+            titulo.classList.add('card-title');
+            titulo.textContent = proyecto.titulo;
+  
+            const descripcion = document.createElement('p');
+            descripcion.classList.add('card-text');
+            descripcion.textContent = proyecto.descripcion;
+  
+            const tecnologias = document.createElement('p');
+            tecnologias.classList.add('card-text');
+            tecnologias.innerHTML = `<strong>Tecnologías:</strong> ${proyecto.tecnologias.join(', ')}`;
+  
+            const empresa = document.createElement('p');
+            empresa.classList.add('card-text');
+            empresa.innerHTML = `<strong>Empresa:</strong> ${proyecto.empresa}`;
+  
+            const botonDetalles = document.createElement('button');
+            botonDetalles.classList.add('btn', 'btn-warning');
+            botonDetalles.textContent = 'Ver más detalles';
+            botonDetalles.onclick = function () {
+              verDetalleProyectoDisponible(proyecto.id);
+            };
+  
+            // Agregar elementos al cardBody
+            cardBody.appendChild(titulo);
+            cardBody.appendChild(descripcion);
+            cardBody.appendChild(tecnologias);
+            cardBody.appendChild(empresa);
+            cardBody.appendChild(botonDetalles);
+  
+            // Agregar imagen y cardBody a la tarjeta
+            proyectoCard.appendChild(img);
+            proyectoCard.appendChild(cardBody);
+  
+            // Agregar la tarjeta a la columna
+            proyectoCol.appendChild(proyectoCard);
+  
+            // Agregar la columna al contenedor
+            proyectosLista.appendChild(proyectoCol);
+          });
+        } else {
+          console.error('El elemento con ID "proyectosLista" no se encontró en el DOM.');
+        }
+      })();
+    </script>
+</div>

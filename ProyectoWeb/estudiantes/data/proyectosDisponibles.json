@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "titulo": "Desarrollo de Aplicación Móvil",
+      "descripcion": "Crear una aplicación móvil para gestión de tareas.",
+      "tecnologias": ["Flutter", "Firebase"],
+      "empresa": "Tech Solutions",
+      "imagen": "../assets/proyecto1.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "Sitio Web E-commerce",
+      "descripcion": "Desarrollar una plataforma de comercio electrónico.",
+      "tecnologias": ["React", "Node.js", "MongoDB"],
+      "empresa": "Online Market",
+      "imagen": "../assets/proyecto2.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Desarrollo de Software de Gestión",
+      "descripcion": "Crear un software de gestión para una empresa de logística.",
+      "tecnologias": ["Java", "Spring Boot", "MySQL"],
+      "empresa": "Logistic Solutions",
+      "imagen": "../assets/proyecto4.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "Desarrollo de Videojuego",
+      "descripcion": "Desarrollar un videojuego de plataformas en 2D.",
+      "tecnologias": ["Unity", "C#"],
+      "empresa": "Game Studios",
+      "imagen": "../assets/proyecto5.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "Desarrollo de Aplicación Web",
+      "descripcion": "Crear una aplicación web para gestión de inventarios.",
+      "tecnologias": ["Angular", "Node.js", "MongoDB"],
+      "empresa": "Inventive Solutions",
+      "imagen": "../assets/proyecto6.jpg"
+    }
+  ]
+  
