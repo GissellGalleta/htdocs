@@ -462,6 +462,13 @@ function verDetalleProyecto(idProyecto) {
   window.location.href = `proyecto-detalle.html?id=${idProyecto}`;
 }
 
+// Función para ver el detalle de un proyecto activo
+function verDetalleProyecto(idProyecto) {
+  // Redirige a la página de detalle del proyecto con el parámetro id
+  window.location.href = `../views/detalle-proyecto.html?id=${idProyecto}`;
+}
+
+
 // Función para aplicar filtros
 function aplicarFiltros() {
   const query = document.getElementById('filtroBusqueda').value.toLowerCase();
@@ -602,81 +609,3 @@ function toggleSidebar(show) {
   }
 }
 
-
-// Función para contar las notificaciones y actualizar el badge
-function actualizarContadorNotificaciones() {
-  const notificacionesCount = document.getElementById('notificacionesCount');
-  if (notificacionesCount) {
-    notificacionesCount.textContent = notificaciones.length;
-    if (notificaciones.length > 0) {
-      notificacionesCount.style.display = 'inline-block';
-    } else {
-      notificacionesCount.style.display = 'none';
-    }
-  }
-}
-
-// Llamar a esta función después de renderizar las notificaciones
-function renderizarNotificaciones() {
-  const notificacionesContainer = document.getElementById('notificacionesLista');
-  
-  // Limpiar contenido previo
-  notificacionesContainer.innerHTML = '';
-
-  if (notificaciones.length === 0) {
-    notificacionesContainer.innerHTML = '<p class="text-center">No tienes notificaciones.</p>';
-    actualizarContadorNotificaciones();
-    return;
-  }
-
-  notificaciones.forEach(notificacion => {
-    // Crear el contenedor de la notificación
-    const item = document.createElement('div');
-    item.classList.add('notification-item');
-
-    // Agregar clase según el estado
-    if (notificacion.estado === 'aceptado') {
-      item.classList.add('notification-aceptado');
-    } else if (notificacion.estado === 'rechazado') {
-      item.classList.add('notification-rechazado');
-    }
-
-    // Icono según el estado
-    const icono = document.createElement('i');
-    icono.classList.add('notification-icon', 'fas');
-    if (notificacion.estado === 'aceptado') {
-      icono.classList.add('fa-check-circle', 'text-success');
-    } else if (notificacion.estado === 'rechazado') {
-      icono.classList.add('fa-times-circle', 'text-danger');
-    }
-
-    // Contenido de la notificación
-    const contenido = document.createElement('div');
-    contenido.classList.add('notification-content');
-
-    const titulo = document.createElement('h6');
-    titulo.textContent = `${notificacion.empresa} - ${notificacion.proyecto}`;
-
-    const hora = document.createElement('p');
-    hora.textContent = formatearFechaHora(notificacion.hora);
-
-    contenido.appendChild(titulo);
-    contenido.appendChild(hora);
-
-    // Tiempo de la notificación
-    const tiempo = document.createElement('div');
-    tiempo.classList.add('notification-time');
-    tiempo.textContent = calcularTiempoTranscurrido(notificacion.hora);
-
-    // Agregar elementos al item
-    item.appendChild(icono);
-    item.appendChild(contenido);
-    item.appendChild(tiempo);
-
-    // Agregar el item al contenedor
-    notificacionesContainer.appendChild(item);
-  });
-
-  // Actualizar el contador de notificaciones
-  actualizarContadorNotificaciones();
-}
