@@ -87,23 +87,22 @@ function cargarComponente(idElemento, url, callback) {
       const categoria = document.createElement('p');
       categoria.className = 'card-text';
       categoria.innerHTML = `<strong>Categoría:</strong> ${proyecto.categoria}`;
+
+      // estado
+      const estado = document.createElement('p');
+      estado.className = 'card-text';
+      estado.innerHTML = `<strong>Estado:</strong> ${proyecto.estado}`;
   
       // Nombre de la empresa
       const empresa = document.createElement('p');
       empresa.className = 'card-text';
       empresa.innerHTML = `<strong>Empresa:</strong> ${proyecto.empresa}`;
   
-      // Botón "Ver más"
-      const btnVerMas = document.createElement('a');
-      btnVerMas.href = `detalle-proyecto.html?id=${proyecto.id}`; // Redirige con el ID del proyecto
-      btnVerMas.className = 'btn btn-primary mt-auto align-self-start';
-      btnVerMas.textContent = 'Ver más';
-  
       // Agregar elementos al cardBody
       cardBody.appendChild(cardTitle);
       cardBody.appendChild(categoria);
+      cardBody.appendChild(estado);
       cardBody.appendChild(empresa);
-      cardBody.appendChild(btnVerMas);
   
       // Agregar imagen y cardBody a la tarjeta
       card.appendChild(img);

@@ -33,7 +33,6 @@
           <div class="card-body">
             <h3 class="card-title" id="detalleTituloProyecto">Título del Proyecto</h3>
             <p class="card-text" id="detalleDescripcionProyecto">Descripción detallada del proyecto.</p>
-            <p><strong>Tecnologías:</strong> <span id="detalleTecnologiasProyecto"></span></p>
             <p><strong>Empresa:</strong> <span id="detalleEmpresaProyecto">Nombre de la Empresa</span></p>
             
             <button class="btn btn-success" id="btnParticiparProyecto">Participar</button>
@@ -75,7 +74,6 @@
       const detalleImagenProyecto = document.getElementById('detalleImagenProyecto');
       const detalleTituloProyecto = document.getElementById('detalleTituloProyecto');
       const detalleDescripcionProyecto = document.getElementById('detalleDescripcionProyecto');
-      const detalleTecnologiasProyecto = document.getElementById('detalleTecnologiasProyecto');
       const detalleEmpresaProyecto = document.getElementById('detalleEmpresaProyecto');
       const btnParticiparProyecto = document.getElementById('btnParticiparProyecto');
 
@@ -88,18 +86,14 @@
       if (detalleDescripcionProyecto) {
         detalleDescripcionProyecto.textContent = proyecto.descripcion;
       }
-      if (detalleTecnologiasProyecto) {
-        detalleTecnologiasProyecto.textContent = proyecto.tecnologias.join(', ');
-      }
       if (detalleEmpresaProyecto) {
         detalleEmpresaProyecto.textContent = proyecto.empresa;
       }
-
       if (btnParticiparProyecto) {
         btnParticiparProyecto.onclick = function() {
           participarProyecto(idProyecto);
           // Una vez participado, redirigimos a mis proyectos
-          window.location.href = '../views/dashboard.html#mis';
+          window.location.href = '../views/proyectos-dispo.html';
         };
       }
     }
