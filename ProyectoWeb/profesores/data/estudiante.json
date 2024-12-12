@@ -1,0 +1,25 @@
+{
+    "nombre": "Juan",
+    "email": "juan.perez@example.com",
+    "nombreCompleto": "Juan Hernandez",
+    "universidad": "IT Veracruz",
+    "semestre": 7,
+    "fechaNacimiento": "1995-08-15",
+    "habilidades": ["HTML", "CSS", "JavaScript", "Inglés - Avanzado"],
+    "imagenPerfil": "../assets/perfil.jpg",
+    "proyectosActivos": [
+      {
+        "id": 3,
+        "titulo": "Desarrollo de Página Web",
+        "descripcion": "Crear una página web corporativa...",
+        "categoria": "Aplicaciones Móviles",
+        "empresa": "Creative Minds",
+        "estado": "En progreso",
+        "imagen": "../assets/proyecto3.jpg",
+        "compañeros": ["Ana Gómez", "Luis Martínez"],
+        "maestroAsesor": "Dr. Carlos Ruiz"
+      }
+    ],
+    "limiteProyectos": 5
+  }
+  

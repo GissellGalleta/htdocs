@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "titulo": "Aplicación Móvil de Salud",
+      "descripcion": "Creación de una aplicación móvil que facilita el seguimiento de la salud y el bienestar de los usuarios, integrando funcionalidades de monitoreo y recordatorios.",
+      "categoria": "Aplicaciones Móviles",
+      "empresa": "Cisco SA de CV",
+      "imagen": "../assets/proyecto1.jpg", 
+      "estado": "Terminado",
+      "fechaInicio": "2024-02-01",
+      "fechaFin": "2024-07-15"
+    },
+    {
+      "id": 2,
+      "titulo": "Aplicación Móvil de Salud",
+      "descripcion": "Creación de una aplicación móvil que facilita el seguimiento de la salud y el bienestar de los usuarios, integrando funcionalidades de monitoreo y recordatorios.",
+      "categoria": "Aplicaciones Móviles",
+      "empresa": "Cisco SA de CV",
+      "imagen": "../assets/proyecto1.jpg", 
+      "estado": "Terminado",
+      "fechaInicio": "2024-02-01",
+      "fechaFin": "2024-07-15"
+    },
+    {
+      "id": 3,
+      "titulo": "Aplicación Móvil de Salud",
+      "descripcion": "Creación de una aplicación móvil que facilita el seguimiento de la salud y el bienestar de los usuarios, integrando funcionalidades de monitoreo y recordatorios.",
+      "categoria": "Aplicaciones Móviles",
+      "empresa": "Cisco SA de CV",
+      "imagen": "../assets/proyecto1.jpg", 
+      "estado": "Terminado",
+      "fechaInicio": "2024-02-01",
+      "fechaFin": "2024-07-15"
+    }
+  ]
+  
