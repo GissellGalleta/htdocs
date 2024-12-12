@@ -1,52 +1,71 @@
-<!-- /empresas/components/header.html -->
+<!-- /estudiantes/components/header.html -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <!-- Botón para abrir el sidebar -->
-      <button class="btn btn-dark me-2" id="btnSidebarToggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <a class="navbar-brand" href="#">ItverCode</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Barra de búsqueda en la Navbar -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <form class="d-flex ms-auto" role="search" onsubmit="event.preventDefault(); aplicarFiltros();">
-          <input class="form-control me-2" type="search" placeholder="Buscar proyectos..." aria-label="Buscar" id="filtroBusqueda">
-          <button class="btn btn-warning text-dark" type="submit">Buscar</button>
-        </form>
-        <ul class="navbar-nav ms-3">
-          <!-- Enlaces de navegación -->
-          <li class="nav-item"><a class="nav-link" href="crear-proyecto.html">CREAR PROYECTO</a></li>
-          <li class="nav-item"><a class="nav-link" href="mensajes.html">Notificaciones</a></li>>
-          <!-- Imagen de perfil o ícono de usuario -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../assets/perfil.png" alt="Perfil" class="rounded-circle" width="30" height="30" id="imagenPerfil">
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-              <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="../logout.html">Cerrar Sesión</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <!-- Botón para abrir el sidebar -->
+    <button class="btn btn-dark me-2" id="btnSidebarToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <a class="navbar-brand" href="dashboard.html">ItverCode</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Barra de búsqueda en la Navbar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="d-flex ms-auto" role="search" onsubmit="event.preventDefault(); aplicarFiltros();">
+        <input class="form-control me-2" type="search" placeholder="Buscar proyectos..." aria-label="Buscar" id="filtroBusqueda">
+        <button class="btn btn-warning text-dark" type="submit">Buscar</button>
+      </form>
+      <ul class="navbar-nav ms-3">
+        <!-- Icono de Notificaciones -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="notificacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell"></i>
+            <span class="badge bg-danger" id="notificacionesCount">0</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificacionesDropdown">
+            <li class="dropdown-header">Notificaciones</li>
+            <li>
+              <div id="notificacionesLista">
+                <p class="text-center">Cargando notificaciones...</p>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" href="#">Ver todas las notificaciones</a></li>
+          </ul>
+        </li>
+        <!-- Enlaces de navegación -->
+        <!-- Imagen de perfil o ícono de usuario -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../assets/perfil.png" alt="Perfil" class="rounded-circle" width="30" height="30" id="imagenPerfil">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+            <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../logout.html">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-      <h3>Menú</h3>
-      <button class="btn btn-dark" id="btnCloseSidebar"><i class="fas fa-times"></i></button>
-    </div>
-    <ul class="list-unstyled components">
-      <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="proyectos-disponibles.html">Proyectos Disponibles</a></li>
-      <li><a href="/ProyectoWeb/Proyectos/views/mis-proyectos.html">Mis Proyectos</a></li>
-      <li><a href="proyectos-terminados.html">Proyectos Terminados</a></li>
-    </ul>
   </div>
-  
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3>Menú</h3>
+    <button class="btn btn-dark" id="btnCloseSidebar"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="list-unstyled components">
+    <li><a href="mis-proyectos.html" class="sidebar-link">Mis Proyectos</a></li>
+    <li><a href="proyectos-terminados.html" class="sidebar-link">Proyectos Terminados</a></li>
+    <li><a href="perfil.html">Mi Perfil</a></li>
+  </ul>
+</div>
+
+<!-- Enlazar el CSS de Notificaciones -->
+<link href="../css/notificaciones.css" rel="stylesheet">
+
+<!-- Enlazar el JS de Notificaciones -->
+<script src="../js/notificaciones.js" defer></script>

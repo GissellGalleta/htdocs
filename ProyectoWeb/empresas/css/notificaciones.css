@@ -1,0 +1,75 @@
+/* /estudiantes/css/notificaciones.css */
+
+/* Estilo general del contenedor de notificaciones */
+.notifications-dropdown {
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  /* Estilo para cada notificación */
+  .notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notification-item:last-child {
+    border-bottom: none;
+  }
+  
+  .notification-icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  /* Estilos según el tipo de notificación */
+  .notification-aceptado {
+    background-color: #e6ffed; /* Verde claro */
+  }
+  
+  .notification-rechazado {
+    background-color: #ffe6e6; /* Rojo claro */
+  }
+  
+  /* Estilo del contenido de la notificación */
+  .notification-content {
+    flex: 1;
+  }
+  
+  .notification-content h6 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .notification-content p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .notification-time {
+    font-size: 10px;
+    color: #999;
+    text-align: right;
+  }
+  
+  /* Scrollbar personalizada para el menú de notificaciones */
+  .notifications-dropdown::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .notifications-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .notifications-dropdown::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  
+  .notifications-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
